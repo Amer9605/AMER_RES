@@ -60,6 +60,7 @@ body {
       height: 100%;
       overflow: hidden; /* Prevent scrolling */
       color:black;
+   overflow: auto; 
 }
 
 a {
