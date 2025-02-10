@@ -82,13 +82,10 @@
         <p>I'm <span class="typed" data-typed-items="Network and Security Engineer"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
 
         <!-- Shining Diamond Download Button -->
-        <div class="download-container">
-          <button id="download-btn" class="dl-button">
-            <span class="button-text">Download CV</span>
-            <div class="am"></div>
-            <div class="shine"></div>
-          </button>
-        </div>
+        <a id="download-btn" href="Amercv2025.pdf" download="Amer_Alghanem_CV.pdf" class="download-button">
+  <span class="button-text">Download CV</span>
+  <div class="am"></div>
+</a>
 
         <div class="social-links">
           <a href="https://x.com/AmerAlghanem"><i class="bi bi-twitter-x"></i></a>
@@ -581,25 +578,22 @@
   </script>
  
  
+
 <script>
   document.getElementById("download-btn").addEventListener("click", function(event) {
-    event.preventDefault();
-    
     let progressBar = this.querySelector(".progress-bar");
-    progressBar.style.transform = "scaleX(1)";
+    progressBar.style.transform = "scaleX(1)"; // Start animation
 
     setTimeout(() => {
-      // Start download after animation
       let link = document.createElement("a");
-      link.href = "Amercv2025.pdf"; // Make sure this path is correct
-      link.download = "Amer_Alghanem_CV.pdf";
+      link.href = "Amercv2025.pdf"; // File in same directory as index.html
+      link.download = "Amer_Alghanem_CV.pdf"; // Set download name
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      
-      // Reset animation
-      progressBar.style.transform = "scaleX(0)";
-    }, 2000); // Match animation duration
+
+      progressBar.style.transform = "scaleX(0)"; // Reset after download
+    }, 2000); // Wait for animation to complete
   });
 </script>
 
