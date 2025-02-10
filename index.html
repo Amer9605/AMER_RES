@@ -581,27 +581,26 @@
   </script>
  
  
- <script>
- document.getElementById("download-btn").addEventListener("click", function () {
-  let btn = this;
-  
-  // Start animation
-  btn.classList.add("downloading");
+<script>
+  document.getElementById("download-btn").addEventListener("click", function(event) {
+    event.preventDefault();
+    
+    let progressBar = this.querySelector(".progress-bar");
+    progressBar.style.transform = "scaleX(1)";
 
-  setTimeout(() => {
-    // Reset button after animation
-    btn.classList.remove("downloading");
-
-    // Create a link element to download the file
-    let link = document.createElement("a");
-    link.href = "Amercv2025.docx"; // Path to your local file
-    link.download = "Amer_Resume.pdf"; // File name
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }, 3000); // Simulate 3-second download animation
-});
-
+    setTimeout(() => {
+      // Start download after animation
+      let link = document.createElement("a");
+      link.href = "Amercv2025.pdf"; // Make sure this path is correct
+      link.download = "Amer_Alghanem_CV.docs";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Reset animation
+      progressBar.style.transform = "scaleX(0)";
+    }, 2000); // Match animation duration
+  });
 </script>
 
   <!-- Main JS File -->
