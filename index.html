@@ -72,26 +72,36 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
+  <section id="hero" class="hero section light-background">
+  <img src="assets/img/new.png" alt="">
 
-      <img src="assets/img/new.png" alt="">
+  <div class="container" data-aos="zoom-out">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <h2>Amer Alghanem</h2>
+        <p>I'm <span class="typed" data-typed-items="Network and Security Engineer"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
 
-      <div class="container" data-aos="zoom-out">
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <h2>Amer alghanem</h2>
-            <p>I'm <span class="typed" data-typed-items=" Network and security engineer"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-            <div class="social-links">
-              <a href="https://x.com/AmerAlghanem"><i class="bi bi-twitter-x"></i></a>
-              <a href="https://www.facebook.com/amer.algahnem"><i class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/amer_algh/"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/feed/"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
+        <!-- Shining Diamond Download Button -->
+        <div class="download-container">
+          <button id="download-btn" class="dl-button">
+            <span class="button-text">Download CV</span>
+            <div class="am"></div>
+            <div class="shine"></div>
+          </button>
+        </div>
+
+        <div class="social-links">
+          <a href="https://x.com/AmerAlghanem"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.facebook.com/amer.algahnem"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/amer_algh/"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/feed/"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-    </section><!-- /Hero Section -->
+
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -185,17 +195,17 @@
 
           <div class="col-lg-6">
 
-            <div class="progress">
+            <div class="a">
               <span class="skill"><span>Security</span> <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="a-bar-wrap">
+                <div class="a-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div><!-- End Skills Item -->
 
-            <div class="progress">
+            <div class="a">
               <span class="skill"><span>Networking</span> <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="a-bar-wrap">
+                <div class="a-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div><!-- End Skills Item -->
 
@@ -569,6 +579,30 @@
       cursor.style.top = `${e.clientY}px`;
     });
   </script>
+ 
+ 
+ <script>
+ document.getElementById("download-btn").addEventListener("click", function () {
+  let btn = this;
+  
+  // Start animation
+  btn.classList.add("downloading");
+
+  setTimeout(() => {
+    // Reset button after animation
+    btn.classList.remove("downloading");
+
+    // Create a link element to download the file
+    let link = document.createElement("a");
+    link.href = "Amercv2025.docx"; // Path to your local file
+    link.download = "Amer_Resume.pdf"; // File name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }, 3000); // Simulate 3-second download animation
+});
+
+</script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
