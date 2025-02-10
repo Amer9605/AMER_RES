@@ -81,60 +81,66 @@ a:hover {
   text-decoration: none;
 }
 
-  .cv-button {
+   .cv-button {
             position: relative;
             display: inline-block;
-            padding: 16px 36px;
-            font-size: 18px;
+            padding: 10px 20px;
+            font-size: 14px;
             font-weight: bold;
             text-transform: uppercase;
             color: #fff;
             text-decoration: none;
-            background: linear-gradient(135deg, #1a1a1a, #4d4d4d, #b9f2ff); /* Dark to Diamond */
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(185, 242, 255, 0.7);
+            background: #000; /* Black color */
+            border: 2px solid #fff;
+            border-radius: 30px;
             overflow: hidden;
             transition: all 0.3s ease-in-out;
         }
 
         .cv-button:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 20px rgba(185, 242, 255, 1);
+            background: #fff;
+            color: #000;
+            border: 2px solid #000;
         }
 
-        /* Shining Effect */
+        /* Inner Border Effect */
         .cv-button::before {
             content: "";
             position: absolute;
-            top: -100%;
-            left: -100%;
+            top: 50%;
+            left: 50%;
             width: 300%;
             height: 300%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 60%);
-            transform: rotate(20deg);
-            transition: opacity 0.5s ease-in-out;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: all 0.5s ease-in-out;
+            border-radius: 50%;
             opacity: 0;
         }
 
         .cv-button:hover::before {
+            width: 100%;
+            height: 100%;
             opacity: 1;
         }
 
-        /* Progress Bar Animation */
-        .cv-progress {
+        /* Ripple Effect */
+        .cv-button::after {
+            content: "";
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #b9f2ff;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 2s ease-in-out;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
         }
 
-        .cv-button:hover .cv-progress {
-            transform: scaleX(1);
+        .cv-button:hover::after {
+            width: 300%;
+            height: 300%;
         }
 h1,
 h2,
