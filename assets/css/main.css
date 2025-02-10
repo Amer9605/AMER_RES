@@ -81,15 +81,7 @@ a:hover {
   text-decoration: none;
 }
 
-  
-        .wrapper {
-            display: grid;
-            place-content: center;
-            height: 100vh;
-            background-color: #f5f5f5;
-        }
-
-        .cv-button {
+   .cv-button {
             position: relative;
             overflow: hidden;
             padding: 0.85rem 2rem;
