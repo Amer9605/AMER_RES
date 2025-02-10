@@ -80,58 +80,60 @@ a:hover {
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
   text-decoration: none;
 }
-
-   .cv-button {
+ .cv-button {
             position: relative;
-            overflow: hidden;
-            padding: 0.85rem 2rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-primary);
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
             text-decoration: none;
-            border-radius: 8px;
-            background-color: transparent;
-            backface-visibility: hidden;
-            box-shadow: inset 0 0 0 1px var(--color-primary);
-            transform: translateZ(0);
+            background: linear-gradient(135deg, #1a1a1a, #4d4d4d, #b9f2ff); /* Dark to Diamond */
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(185, 242, 255, 0.7);
+            overflow: hidden;
             transition: all 0.3s ease-in-out;
         }
 
         .cv-button:hover {
-            color: var(--color-dark);
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(185, 242, 255, 1);
         }
 
-        .cv-button::after {
+        /* Shining Effect */
+        .cv-button::before {
             content: "";
-            pointer-events: none;
             position: absolute;
-            top: 0;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 60%);
+            transform: rotate(20deg);
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        .cv-button:hover::before {
+            opacity: 1;
+        }
+
+        /* Progress Bar Animation */
+        .cv-progress {
+            position: absolute;
+            bottom: 0;
             left: 0;
-            z-index: 1;
-            height: 120%;
-            width: 120%;
-            border-radius: 20%;
-            background-color: var(--color-primary);
-            scale: 0 0;
-            translate: 0 140%;
-            transition: scale 0.6s cubic-bezier(0.215, 0.61, 0.355, 1), translate 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+            width: 100%;
+            height: 4px;
+            background: #b9f2ff;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 2s ease-in-out;
         }
 
-        .cv-button:hover::after {
-            scale: 1.5 1.5;
-            translate: 0 0;
-            border-radius: 50%;
-        }
-
-        .cv-button span {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            z-index: 2;
-            font-size: 1.2rem;
-            letter-spacing: 0.025em;
-            transition: color 0.32s ease-in-out;
+        .cv-button:hover .cv-progress {
+            transform: scaleX(1);
         }
 h1,
 h2,
